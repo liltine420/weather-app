@@ -17,5 +17,11 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}k&appid=$
 
 axios.get(apiUrl).then(displayTemperature);
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  console.log(cityInputElement.value);
+}
+
 let form = document.querySelector("search-form");
 form.addEventListener("submit", search);
