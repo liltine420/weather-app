@@ -30,10 +30,8 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
-
   celsiusTemperature = response.data.main.temp;
-
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  temperatureElement.innerHTML = Math.round(reponse.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -64,8 +62,8 @@ function displayFahrenheitTemperature(event) {
 
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
-  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function displayCelsiusTemperature(event) {
