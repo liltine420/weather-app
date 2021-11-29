@@ -73,9 +73,8 @@ function getForecast(coordinates) {
 
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  document.querySelector("#temperature").innerHTML =
+    Math.round(celciusTemperature);
 
   let dateElement = document.querySelector("#date");
   let descriptionElement = document.querySelector("#description");
