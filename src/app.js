@@ -96,7 +96,7 @@ function displayTemperature(response) {
 
 function search(city) {
   let apiKey = "f64789992dbed6d446cc845a3728146a";
-  let city = "Seattle";
+  let city = document.querySelector("#city").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
@@ -135,6 +135,8 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+dateElement.innerHTML = `${days[day]} ${hours}:${minutes}`;
 
 search("New York");
 displayForecast();
