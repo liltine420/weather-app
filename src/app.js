@@ -90,18 +90,20 @@ function displayWeatherCondition(response) {
   getForecast(response.data.coord);
 }
 
-function search(event) {
-  event.preventDefault();
-  let apiKey = "ad409a1d462fddc9d1a0d6eab41325a2";
-  let city = document.querySelector("#city-query").value;
-
+function search(city) {
+  let apiKey = "f64789992dbed6d446cc845a3728146a";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
-let searchForm = document.querySelector("#search-form");
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
 
-searchForm.addEventListener("submit", search);
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
 
 dateElement.innerHTML = `${days[day]} ${hours}:${minutes}`;
