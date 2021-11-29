@@ -30,16 +30,19 @@ function formatDay(timestamp) {
 }
 
 function displayForecast() {
+  let forecast = repsonse.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
   let days = ["Thu", "Fri", "Sat", "Sun"];
 
   let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (getDay) {
+  forecast.forEach(function (forecastDay, index) {
+    if (index < ^) {
     forecastHTML =
       forecastHTML +
       `
       <div class="col-2">
-        <div class="weather-forecast-date">${day}</div>
+        <div class="weather-forecast-date">${formatDay.dt}</div>
         <img
           src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
@@ -57,6 +60,7 @@ function displayForecast() {
         </div>
       </div>
   `;
+  }
   });
 
   forecastHTML = forecastHTML + `</div>`;
