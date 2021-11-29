@@ -79,6 +79,7 @@ function displayWeatherCondition(response) {
 
   let descriptionElement = document.querySelector("#description");
   let windElement = document.querySelector("#wind");
+  let humidityElement = document.querySelector("#humidity");
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -87,6 +88,8 @@ function displayWeatherCondition(response) {
 
   descriptionElement.innerHTML = response.data.weather[0].description;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  humidityElement.innerHTML = response.data.main.humidity;
+  dateElement.innerHTML = formatDate(reponse.data.dt * 1000);
   getForecast(response.data.coord);
 }
 
