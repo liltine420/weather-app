@@ -116,6 +116,11 @@ function displayFarenheitTemperature(event) {
   temperatureElement.innerHTML = Math.round(farenheitTemperature);
 }
 
+function displayCelciusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = celciusTemperature;
+}
 let celciusTemperature = null;
 
 let searchForm = document.querySelector("#search-form");
@@ -127,3 +132,6 @@ search("Seattle");
 
 let farenheitLink = document.querySelector("#farenheit-link");
 farenheitLink.addEventListener("click", displayFarenheitTemperature);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", displayCelciusTemperature);
