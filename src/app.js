@@ -111,7 +111,10 @@ function handleSubmit(event) {
 
 function displayFarenheitTemperature(event) {
   event.preventDefault();
-  alert("link clicked");
+  let farenheitTemperature = (14 * 9) / 5 + 32;
+  alert(farenheitTemperature);
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(farenheitTemperature);
 }
 
 let searchForm = document.querySelector("#search-form");
