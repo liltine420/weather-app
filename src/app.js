@@ -77,6 +77,7 @@ function displayWeatherCondition(response) {
     response.data.main.temp
   );
 
+  let dateElement = document.querySelector("#date");
   let descriptionElement = document.querySelector("#description");
   let windElement = document.querySelector("#wind");
   let humidityElement = document.querySelector("#humidity");
@@ -85,6 +86,8 @@ function displayWeatherCondition(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  celciusTemperature = response.data.main.temp;
 
   descriptionElement.innerHTML = response.data.weather[0].description;
   windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -110,3 +113,5 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 dateElement.innerHTML = `${days[day]} ${hours}:${minutes}`;
+
+search("Seattle");
