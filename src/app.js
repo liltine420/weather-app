@@ -96,6 +96,8 @@ function displayWeatherCondition(response) {
   getForecast(response.data.coord);
 }
 
+getForecast(response.data.coord);
+
 function search(city) {
   let apiKey = "f64789992dbed6d446cc845a3728146a";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
