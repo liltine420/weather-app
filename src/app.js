@@ -135,6 +135,7 @@ searchForm.addEventListener("submit", handleSubmit);
 dateElement.innerHTML = `${days[day]} ${hours}:${minutes}`;
 
 search("Seattle");
+displayForecast();
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
