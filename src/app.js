@@ -29,7 +29,7 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -61,6 +61,8 @@ width="42"
  `;
     }
   });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function getForecast(coordinates) {
@@ -131,11 +133,11 @@ searchForm.addEventListener("submit", handleSubmit);
 
 dateElement.innerHTML = `${days[day]} ${hours}:${minutes}`;
 
-search("Seattle");
-displayForecast();
-
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+search("Seattle");
+displayForecast();
