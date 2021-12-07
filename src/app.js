@@ -61,8 +61,6 @@ width="42"
  `;
     }
   });
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
 }
 
 function getForecast(coordinates) {
